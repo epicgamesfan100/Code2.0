@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 2.0</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00c9ff, #92fe9d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #00c9ff;
+            outline: none;
+        }
+
+        button {
+            background-color: #00c9ff;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1ad1ff;
+        }
+
+        #error {
+            margin-top: 15px;
+            color: #ff4c4c;
+            font-size: 0.95rem;
+        }
+    </style>
+    <script>
+        function checkCode() {
+            const userInput = document.getElementById("secretCode").value;
+            const correctCode = "MangaComingSoon!";
+            
+            if (userInput === correctCode) {
+                window.location.href = "https://example.com/manga"; // Replace this with your actual URL
+            } else {
+                document.getElementById("error").textContent = "Incorrect code. Try again.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Code 2.0</h1>
+        <p>Please type in the other code</p>
+
+        <input type="text" id="secretCode" placeholder="Enter secret code" />
+        <button onclick="checkCode()">Submit</button>
+        <div id="error"></div>
+    </div>
+</body>
+</html>
